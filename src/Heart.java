@@ -70,4 +70,24 @@ public class Heart extends Shape{
             getGraphics().drawPolygon(triangleX, triangleY, triangleX.length);
         }
     }
+
+    public int mostHigh()
+    {
+        return this.getPosition().getY();
+    }
+
+    public int mostLow()
+    {
+        return this.getPosition().getY() - length;
+    }
+
+    public int mostRight()
+    {
+        return this.getPosition().getX() + width;
+    }
+
+    public int mostLeft()
+    {
+        return this.getPosition().getX();
+    }
 }

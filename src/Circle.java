@@ -22,10 +22,30 @@ public class Circle extends Shape{
     public Point[] getBoundingBox() {
        Point[] arr = new Point[4];
        arr[0] = new Point(this.getPosition().getX(),this.getPosition().getY());
-       arr[1] = new Point(this.getPosition().getX(),this.getPosition().getY()-(radius*2));
-       arr[2] = new Point(this.getPosition().getX()+(radius*2),this.getPosition().getY()-(radius*2));
+       arr[1] = new Point(this.getPosition().getX(),this.getPosition().getY()+(radius*2));
+       arr[2] = new Point(this.getPosition().getX()+(radius*2),this.getPosition().getY()+(radius*2));
        arr[3] = new Point(this.getPosition().getX()+(radius*2),this.getPosition().getY());
         return arr;
+    }
+
+    public int mostHigh()
+    {
+        return getPosition().getY();
+    }
+
+    public int mostLow()
+    {
+        return getPosition().getY() - 2*radius;
+    }
+
+    public int mostRight()
+    {
+        return getPosition().getX() + 2*radius;
+    }
+
+    public int mostLeft()
+    {
+        return getPosition().getX();
     }
 
     public void draw()
@@ -33,7 +53,21 @@ public class Circle extends Shape{
         if(!getFilled())
             getGraphics().drawOval(getPosition().getX()+radius,getPosition().getY()-radius,radius*2,radius*2);
         else
-            getGraphics().fillOval(getPosition().getX(),getPosition().getY()+(radius/2),radius*2,radius*2);
+            getGraphics().fillOval(getPosition().getX(),getPosition().getY(),radius*2,radius*2);
+        getGraphics().drawPolygon(
+                new int[] {
+                        getBoundingBox()[0].getX(),
+                        getBoundingBox()[1].getX(),
+                        getBoundingBox()[2].getX(),
+                        getBoundingBox()[3].getX()
+                },
+                new int[] {
+                        getBoundingBox()[0].getY(),
+                        getBoundingBox()[1].getY(),
+                        getBoundingBox()[2].getY(),
+                        getBoundingBox()[3].getY()
+                },
+                4);
     }
 
 

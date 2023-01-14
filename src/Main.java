@@ -6,8 +6,12 @@ public class Main {
     {
         Scene s1 = new Scene(600,600);
         //Graphics g1 = s1.getGraphics();
-        Heart h = new Heart(100, 200, new Point(100, 100), true, 100, 100);
-        s1.addItem(h);
+       Circle c = new Circle(100, new Point(100, 100), true);
+       RenderBoundingBox circle = new RenderBoundingBox(c);
+        Triangle t1 = new Triangle(new Point(400,200), new Point(500,200), new Point(450,300),true);
+       RenderBoundingBox triangle = new RenderBoundingBox(t1);
+       s1.addItem(t1);
+       triangle.drawBoundingBox();
     }
 
 }

@@ -34,6 +34,26 @@ public class Rectangle extends Shape{
         return arr;
     }
 
+    public int mostHigh()
+    {
+        return this.getPosition().getY();
+    }
+
+    public int mostLow()
+    {
+        return this.getPosition().getY() - height;
+    }
+
+    public int mostRight()
+    {
+        return this.getPosition().getX() + width;
+    }
+
+    public int mostLeft()
+    {
+        return this.getPosition().getX();
+    }
+
     public void draw()
     {
         if(!getFilled())

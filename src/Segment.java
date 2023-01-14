@@ -55,26 +55,26 @@ public class Segment extends Primitive {
         arr[1] = new Point(start_point.getX(), end_point.getY());
         arr[2] = end_point;
         arr[3] = new Point(end_point.getX(), start_point.getY());
-        setPosition(new Point(left(), high()));
+        setPosition(new Point(mostLeft(), mostHigh()));
         return arr;
     }
 
-    private int left()
+    public int mostLeft()
     {
         return Math.max(start_point.getY(),end_point.getY());
     }
 
-    private int low()
+    public int mostLow()
     {
         return Math.min(start_point.getY(),end_point.getY());
     }
 
-    private int right()
+    public int mostRight()
     {
         return Math.max(start_point.getX(),end_point.getX());
     }
 
-    private int high()
+    public int mostHigh()
     {
         return Math.min(start_point.getX(),end_point.getX());
     }

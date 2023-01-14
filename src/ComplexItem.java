@@ -28,14 +28,14 @@ public class ComplexItem extends Item{
 
     public Point[] getBoundingBox() {
         Point[] arr = new Point[4];
-        arr[0] = new Point(mostL(),mostHigh());
-        arr[1] =new Point(mostL(),mostLow());
-        arr[2] =new Point(mostR(),mostLow());
-        arr[3] =new Point(mostR(),mostHigh());
+        arr[0] = new Point(mostLeft(),mostHigh());
+        arr[1] =new Point(mostLeft(),mostLow());
+        arr[2] =new Point(mostRight(),mostLow());
+        arr[3] =new Point(mostRight(),mostHigh());
         return arr;
     }
 
-    private int mostHigh()
+    public int mostHigh()
     {
         int first = getChildren().get(0).getBoundingBox()[0].getY();
         int max=first;
@@ -46,7 +46,7 @@ public class ComplexItem extends Item{
         return max;
     }
 
-    private int mostLow()
+    public int mostLow()
     {
         int first = getChildren().get(0).getBoundingBox()[1].getY();
         int min=first;
@@ -57,7 +57,7 @@ public class ComplexItem extends Item{
         return min;
     }
 
-    private int mostR()
+    public int mostRight()
     {
         int first = getChildren().get(0).getBoundingBox()[3].getX();
         int max=first;
@@ -68,7 +68,7 @@ public class ComplexItem extends Item{
         return max;
     }
 
-    private int mostL()
+    public int mostLeft()
     {
         int first = getChildren().get(0).getBoundingBox()[0].getY();
         int min=first;

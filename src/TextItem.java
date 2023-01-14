@@ -30,6 +30,26 @@ public class TextItem extends Item {
         return arr;
     }
 
+    public int mostLeft()
+    {
+        return getPosition().getX();
+    }
+
+    public int mostLow()
+    {
+        return getPosition().getY();
+    }
+
+    public int mostRight()
+    {
+        return getPosition().getX()+text.length();
+    }
+
+    public int mostHigh()
+    {
+        return getPosition().getY();
+    }
+
     public void draw()
     {
         getGraphics().drawString(text, getPosition().getX(), getPosition().getY());

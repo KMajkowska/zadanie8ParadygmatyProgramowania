@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public abstract class Item {
+public abstract class Item implements Component{
 
     private Point pos;
 
@@ -39,6 +39,11 @@ public abstract class Item {
         this.pos.setX(p.getX()+this.pos.getX());
         this.pos.setY(p.getY()+this.pos.getY());
     }
+
+    public abstract int mostHigh();
+    public abstract int mostLow();
+    public abstract int mostRight();
+    public abstract int mostLeft();
 
     public abstract Point[] getBoundingBox();
 

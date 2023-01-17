@@ -12,6 +12,14 @@ public abstract class Item implements Component{
         this.pos=pos;
     }
 
+    public Point getPosition()
+    {
+        return pos;
+    }
+
+    public void setPosition(Point position) {
+        this.pos = position;
+    }
     public Graphics getGraphics() {
         return graphics;
     }
@@ -25,14 +33,7 @@ public abstract class Item implements Component{
         this.pos=null;
     }
 
-    public Point getPosition()
-    {
-        return pos;
-    }
 
-    public void setPosition(Point pos) {
-        this.pos = pos;
-    }
 
     public void translate(Point p)
     {
@@ -40,12 +41,4 @@ public abstract class Item implements Component{
         this.pos.setY(p.getY()+this.pos.getY());
     }
 
-    public abstract int mostHigh();
-    public abstract int mostLow();
-    public abstract int mostRight();
-    public abstract int mostLeft();
-
-    public abstract Point[] getBoundingBox();
-
-    public abstract void draw();
 }

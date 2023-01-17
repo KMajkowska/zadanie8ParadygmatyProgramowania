@@ -48,26 +48,11 @@ public class Circle extends Shape{
         return getPosition().getX();
     }
 
-    public void draw()
-    {
-        if(!getFilled())
-            getGraphics().drawOval(getPosition().getX()+radius,getPosition().getY()-radius,radius*2,radius*2);
+    public void draw() {
+        if (!getFilled())
+            getGraphics().drawOval(getPosition().getX() + radius, getPosition().getY() - radius, radius * 2, radius * 2);
         else
-            getGraphics().fillOval(getPosition().getX(),getPosition().getY(),radius*2,radius*2);
-        getGraphics().drawPolygon(
-                new int[] {
-                        getBoundingBox()[0].getX(),
-                        getBoundingBox()[1].getX(),
-                        getBoundingBox()[2].getX(),
-                        getBoundingBox()[3].getX()
-                },
-                new int[] {
-                        getBoundingBox()[0].getY(),
-                        getBoundingBox()[1].getY(),
-                        getBoundingBox()[2].getY(),
-                        getBoundingBox()[3].getY()
-                },
-                4);
+            getGraphics().fillOval(getPosition().getX(), getPosition().getY(), radius * 2, radius * 2);
     }
 
 

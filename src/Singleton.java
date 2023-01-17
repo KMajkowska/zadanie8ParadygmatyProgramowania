@@ -1,8 +1,7 @@
 public interface Singleton {
 
-    static OvalSingleton getInstance(int width, int height, Point position, Boolean filled)
+    default OvalSingleton getOvalInstance(int width, int height, Point position, Boolean filled)
     {
-        OvalSingleton oval = OvalSingleton.getInstance(width, height, position, filled);
-        return oval;
+        return OvalSingleton.getInstance(width, height, position, filled);
     }
 }
